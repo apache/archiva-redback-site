@@ -25,8 +25,6 @@
 
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/guides/mini/guide-apt-format.html
-
-
 Redback Struts2 Integration
 
   <<NOTE>>: This has changed dramatically and may not be correct.
