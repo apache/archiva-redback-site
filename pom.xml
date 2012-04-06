@@ -20,16 +20,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.codehaus.redback</groupId>
-    <artifactId>redback</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <groupId>org.apache.archiva</groupId>
+    <artifactId>archiva-parent</artifactId>
+    <version>9-SNAPSHOT</version>
   </parent>
   <artifactId>redback-site</artifactId>
   <name>Redback :: Site</name>
   <packaging>pom</packaging>
+  <version>2.0-SNAPSHOT</version>
   <properties>
     <redbackVersion>${project.version}</redbackVersion>
-    <siteDeploymentUrl>dav:https://dav.codehaus.org/redback/</siteDeploymentUrl>
+    <siteDeploymentUrl>${siteBaseDeployment}/redback</siteDeploymentUrl>
   </properties>
   <build>
     <plugins>
@@ -40,6 +41,13 @@
          <port>9000</port>
          <tempWebappDirectory>${basedir}/target/site/tempdir</tempWebappDirectory>
        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh</artifactId>
+            <version>2.2</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -72,9 +80,9 @@
   </scm>
   <distributionManagement>
    <site>
-      <id>codehaus.org</id>
+     <id>apache.website</id>
       <name>Redback Website</name>
       <url>${siteDeploymentUrl}</url>
-    </site>
+   </site>
   </distributionManagement>
 </project>
