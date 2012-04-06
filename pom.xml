@@ -21,16 +21,6 @@
          <port>9000</port>
          <tempWebappDirectory>${basedir}/target/site/tempdir</tempWebappDirectory>
        </configuration>
-       <!-- as already loaded by an extension: java.lang.ClassNotFoundException: org.slf4j.impl.StaticLoggerBinder -->
-        <!--
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.wagon</groupId>
-             <artifactId>wagon-webdav-jackrabbit</artifactId>
-             <version>2.0</version>
-          </dependency>
-        </dependencies>
-        -->
       </plugin>
     </plugins>
   </build>
@@ -57,8 +47,8 @@
     </plugins>
   </reporting>
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/redback/redback-site/trunk</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/redback/redback-site/trunk</developerConnection>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/archiva/redback/redback-site/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/redback-site/trunk</developerConnection>
     <url>http://fisheye.codehaus.org/browse/redback/redback-site/trunk</url>
   </scm>
   <distributionManagement>
