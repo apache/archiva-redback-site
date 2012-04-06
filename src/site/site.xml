@@ -18,22 +18,16 @@
   ~ under the License.
   -->
 
-<project name="Redback">
+<project name="Apache Redback">
   <bannerLeft>
     <name>Redback</name>
-    <href>http://redback.codehaus.org</href>
+    <href>http://archiva.apache.org/redback</href>
   </bannerLeft>
-  <!--
-  <bannerRight>
-    <name>The Codehaus</name>
-    <href>http://codehaus.org</href>
-    <src>http://media.codehaus.org/images/unity-codehaus-logo.png</src>
-  </bannerRight>
-  -->
+
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-fluido-skin</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.2.1</version>
   </skin>
 
   <custom>
@@ -41,7 +35,7 @@
       <topBarEnabled>true</topBarEnabled>
       <sideBarEnabled>false</sideBarEnabled>
       <googleSearch>
-        <sitesearch>http://redback.codehaus.org</sitesearch>
+        <sitesearch>http://archiva.apache.org/redback</sitesearch>
       </googleSearch>
       <ohloh>
         <projectId>8659</projectId>
@@ -56,9 +50,8 @@
  
   <body>
     <links>
-      <item name="The Codehaus" href="http://codehaus.org" />
-      <item name="Redback Core" href="http://redback.codehaus.org/redback-core"/>
-      <item name="Redback Components" href="http://redback.codehaus.org/components"/>
+      <item name="Redback Core" href="http://archiva.apache.org/redback"/>
+      <item name="Redback Components" href="http://archiva.apache.org/redback-components"/>
     </links>
 
     <menu name="Overview">
@@ -85,8 +78,8 @@
     
     <menu name="Development">
       <item name="Extending Redback Authentication" href="development/extending-authn.html"/>
-      <item name="Redback Core" href="http://redback.codehaus.org/redback-core"/>
-      <item name="Redback Components" href="http://redback.codehaus.org/components"/>
+      <item name="Redback Core" href="http://archiva.apache.org/redback-core"/>
+      <item name="Redback Components" href="http://archiva.apache.org/redback-components"/>
     </menu>
     
     <menu ref="reports" />
