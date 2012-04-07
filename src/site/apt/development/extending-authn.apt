@@ -40,9 +40,9 @@ Extending Redback Authentication
 
     * create a user provider implementation project under <<<redback-users-providers>>>
 
-    * <<<org.codehaus.plexus.redback.users.User>>> must be implemented
+    * <<<org.apache.archiva.redback.users.User>>> must be implemented
 
-    * <<<org.codehaus.plexus.redback.users.UserManager>>> must be implemented
+    * <<<org.apache.archiva.redback.users.UserManager>>> must be implemented
 
   * utility and wrapper classes can be implemented under <<<redback-common>>>
 
@@ -65,11 +65,11 @@ Extending Redback Authentication
 
   * create the provider project <<<redback-users-openid>>>
 
-    * implement <<<org.codehaus.plexus.redback.users.User>>>, something like <<<OpenIdUser>>>
+    * implement <<<org.apache.archiva.redback.users.User>>>, something like <<<OpenIdUser>>>
 
       * OpenId supports only the principal/username and password fields, so use dummy/default values for the unsupported fields (email, fullname) in this case.
 
-    * implement <<<org.codehaus.plexus.redback.users.UserManager>>>, something like <<<OpenIdUserManager>>>
+    * implement <<<org.apache.archiva.redback.users.UserManager>>>, something like <<<OpenIdUserManager>>>
 
       * OpenId is a read-only authentication service, <<<createUser()>>>, <<<updateUser()>>>, <<<deleteUser()>>> may not be used
 
