@@ -51,9 +51,9 @@ Redback Ldap Integration
 +--------------------------------------+
 
   <component>
-      <role>org.codehaus.plexus.redback.common.ldap.connection.LdapConnectionFactory</role>
+      <role>org.apache.archiva.redback.common.ldap.connection.LdapConnectionFactory</role>
       <role-hint>configurable</role-hint>
-      <implementation>org.codehaus.plexus.redback.common.ldap.connection.ConfigurableLdapConnectionFactory</implementation>
+      <implementation>org.apache.archiva.redback.common.ldap.connection.ConfigurableLdapConnectionFactory</implementation>
       <description></description>
       <configuration>
         <hostname></hostname>
@@ -86,9 +86,9 @@ Redback Ldap Integration
 +--------------------------------------+
         
     <component>
-      <role>org.codehaus.plexus.redback.common.ldap.UserMapper</role>
+      <role>org.apache.archiva.redback.common.ldap.UserMapper</role>
       <role-hint>ldap</role-hint>
-      <implementation>org.codehaus.plexus.redback.common.ldap.LdapUserMapper </implementation>
+      <implementation>org.apache.archiva.redback.common.ldap.LdapUserMapper </implementation>
       <description></description>
       <configuration>
         <email-attribute>email</email-attribute>

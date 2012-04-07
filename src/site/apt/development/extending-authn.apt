@@ -34,7 +34,7 @@ Extending Redback Authentication
 
     * create an authentication implementation project under <<<redback-authentication-providers>>>
 
-    * <<<org.codehaus.plexus.redback.authentication.Authenticator>>> must be implemented
+    * <<<org.apache.archiva.redback.authentication.Authenticator>>> must be implemented
 
   * <<<redback-users-api>>> must be implemented
 
@@ -46,9 +46,9 @@ Extending Redback Authentication
 
   * utility and wrapper classes can be implemented under <<<redback-common>>>
 
-    * e.g. <<<$redback/redback-common/redback-common-ldap>>> contains the utility class <<<org.codehaus.plexus.redback.common.ldap.LdapUtils>>>, and the wrapper class <<<org.codehaus.plexus.redback.common.ldap.LdapUser>>>
+    * e.g. <<<$redback/redback-common/redback-common-ldap>>> contains the utility class <<<org.apache.archiva.redback.common.ldap.LdapUtils>>>, and the wrapper class <<<org.apache.archiva.redback.common.ldap.LdapUser>>>
 
-    * other essential classes may be placed here as well, such as the <<<org.codehaus.plexus.redback.common.ldap.connection.LdapConnectionFactory>>>
+    * other essential classes may be placed here as well, such as the <<<org.apache.archiva.redback.common.ldap.connection.LdapConnectionFactory>>>
 
 
 * Examples
@@ -61,7 +61,7 @@ Extending Redback Authentication
 
   * create the provider project <<<redback-authentication-openid>>>
 
-    * create the authenticator class, something like <<<OpenIdAuthenticator>>> that implements <<<org.codehaus.plexus.redback.authentication.Authenticator>>>
+    * create the authenticator class, something like <<<OpenIdAuthenticator>>> that implements <<<org.apache.archiva.redback.authentication.Authenticator>>>
 
   * create the provider project <<<redback-users-openid>>>
 
@@ -81,7 +81,7 @@ Extending Redback Authentication
 
       * <<<OpenIdUtils>>> class, may be implemented to normalize the User-Supplied Identifier to an Identifier that the OpenId Provider understands, e.g. redback username ('<<<johndoe>>>') to OpenId url-like identifier ('<<<http://johndoe.openidprovider.com>>>')
 
-      * <<<OpenIdAuthenticationException>>> that implements <<<org.codehaus.plexus.redback.authentication.AuthenticationException>>>
+      * <<<OpenIdAuthenticationException>>> that implements <<<org.apache.archiva.redback.authentication.AuthenticationException>>>
 
       * <<<OpenIdProviderFactory>>> that takes the configuration from <<<OpenIdConfiguration>>>
 
