@@ -38,8 +38,8 @@ use of properties files.  Below is a listing of all of the available configurati
 --------------------------------------------
 
    <component>
-      <role>org.codehaus.plexus.redback.configuration.UserConfiguration</role>
-      <implementation>org.codehaus.plexus.redback.configuration.UserConfiguration</implementation>
+      <role>org.apache.archiva.redback.configuration.UserConfiguration</role>
+      <implementation>org.apache.archiva.redback.configuration.UserConfiguration</implementation>
       <configuration>
         <configs>
           <config>${user.home}/.m2/security.properties</config>
