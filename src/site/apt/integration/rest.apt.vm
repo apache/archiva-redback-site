@@ -147,7 +147,7 @@ Redback Rest Support
 
   Sample on how to use
 
-%{snippet|id=create-user|url=http://svn.codehaus.org/redback/redback/trunk/redback-integrations/redback-rest/redback-rest-services/src/test/java/org/codehaus/redback/rest/services/LoginServiceTest.java}
+%{snippet|id=create-user|url=http://svn.apache.org/repos/asf/archiva/redback/redback-core/trunk/redback-integrations/redback-rest/redback-rest-services/src/test/java/org/apache/archiva/redback/rest/services/LoginServiceTest.java}
 
 
 
