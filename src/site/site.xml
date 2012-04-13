@@ -56,7 +56,7 @@
   <body>
     <links>
       <item name="Redback Core" href="http://archiva.apache.org/redback"/>
-      <item name="Redback Components" href="http://archiva.apache.org/redback-components"/>
+      <item name="Redback Components" href="http://archiva.apache.org/redback/components"/>
     </links>
 
     <menu name="Overview">
