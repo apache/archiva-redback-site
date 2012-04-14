@@ -54,10 +54,6 @@
   <version position="left" />
  
   <body>
-    <links>
-      <item name="Redback Core" href="http://archiva.apache.org/redback"/>
-      <item name="Redback Components" href="http://archiva.apache.org/redback/components"/>
-    </links>
 
     <menu name="Overview">
       <item name="Introduction" href="index.html"/>
@@ -83,8 +79,7 @@
     
     <menu name="Development">
       <item name="Extending Redback Authentication" href="development/extending-authn.html"/>
-      <item name="Redback Core" href="http://archiva.apache.org/redback-core"/>
-      <item name="Redback Components" href="http://archiva.apache.org/redback-components"/>
+      <item name="Redback Components" href="http://archiva.apache.org/redback/components"/>
     </menu>
     
     <menu ref="reports" />
