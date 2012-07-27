@@ -71,9 +71,9 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <anonymousConnection>scm:svn:http://svn.apache.org/repos/asf/archiva/redback/all</anonymousConnection>
-          <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/all</developerConnection>
-          <webAccessUrl>http://svn.apache.org/viewvc/archiva/</webAccessUrl>
+          <anonymousConnection>scm:svn:http://svn.apache.org/repos/asf/archiva/redback/</anonymousConnection>
+          <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/</developerConnection>
+          <webAccessUrl>http://svn.apache.org/viewvc/archiva/redback</webAccessUrl>
           <checkoutDirectoryName>redback-all</checkoutDirectoryName>
         </configuration>
       </plugin>
