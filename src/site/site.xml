@@ -34,6 +34,7 @@
     <fluidoSkin>
       <topBarEnabled>true</topBarEnabled>
       <sideBarEnabled>false</sideBarEnabled>
+      <topBarContainerStyle>width: 90%;</topBarContainerStyle> 
       <googleSearch>
         <sitesearch>http://archiva.apache.org/redback</sitesearch>
       </googleSearch>
