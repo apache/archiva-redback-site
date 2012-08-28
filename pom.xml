@@ -33,12 +33,7 @@
     <siteDeploymentUrl>${siteBaseDeployment}/redback</siteDeploymentUrl>
 
     <siteFilePath>${user.home}/redback-site-deploy</siteFilePath>
-    <siteUrlDeployment>file://${siteFilePath}</siteUrlDeployment>
     <scmPubCheckoutDirectory>${user.home}/redback-site-content</scmPubCheckoutDirectory>
-    <scmTryUpdate>true</scmTryUpdate>
-    <scmSkipDeletedFiles>false</scmSkipDeletedFiles>
-    <maven-scm-provider-svnjava.version>2.0.4</maven-scm-provider-svnjava.version>
-    <svnkit.version>1.7.5-v1</svnkit.version>
 
   </properties>
   <build>
@@ -47,34 +42,14 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>1.0-SNAPSHOT</version>
           <configuration>
             <pubScmUrl>scm:svn:https://svn.apache.org/repos/asf/archiva/site-content/redback</pubScmUrl>
-            <content>${siteFilePath}</content>
-            <checkoutDirectory>${scmPubCheckoutDirectory}</checkoutDirectory>
-            <tryUpdate>${scmTryUpdate}</tryUpdate>
-            <skipDeletedFiles>${scmSkipDeletedFiles}</skipDeletedFiles>
-            <providerImplementations>
-              <svn>javasvn</svn>
-            </providerImplementations>
             <checkinComment>Apache Redback Main site deployment</checkinComment>
             <ignorePathsToDelete>
               <ignorePathToDelete>core/**</ignorePathToDelete>
               <ignorePathToDelete>components/**</ignorePathToDelete>
             </ignorePathsToDelete>
           </configuration>
-          <dependencies>
-            <dependency>
-              <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
-              <artifactId>maven-scm-provider-svnjava</artifactId>
-              <version>${maven-scm-provider-svnjava.version}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.tmatesoft.svnkit</groupId>
-              <artifactId>svnkit</artifactId>
-              <version>${svnkit.version}</version>
-            </dependency>
-          </dependencies>
         </plugin>
       </plugins>
     </pluginManagement>
