@@ -23,6 +23,7 @@
     <groupId>org.apache.archiva</groupId>
     <artifactId>archiva-parent</artifactId>
     <version>9-SNAPSHOT</version>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>redback-site</artifactId>
   <name>Redback :: Site</name>
@@ -30,7 +31,6 @@
   <version>2.0-SNAPSHOT</version>
   <properties>
     <redbackVersion>${project.version}</redbackVersion>
-    <siteDeploymentUrl>${siteBaseDeployment}/redback</siteDeploymentUrl>
 
     <siteFilePath>${user.home}/redback-site-deploy</siteFilePath>
     <scmPubCheckoutDirectory>${user.home}/redback-site-content</scmPubCheckoutDirectory>
@@ -91,7 +91,7 @@
    <site>
      <id>apache.website</id>
       <name>Redback Website</name>
-      <url>${siteUrlDeployment}</url>
+     <url>${siteUrlDeployment}</url>
    </site>
   </distributionManagement>
 </project>
