@@ -45,50 +45,48 @@
   </distributionManagement>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <configuration>
-            <checkinComment>Apache Redback Main site deployment</checkinComment>
-            <ignorePathsToDelete>
-              <ignorePathToDelete>core**</ignorePathToDelete>
-              <ignorePathToDelete>components**</ignorePathToDelete>
-            </ignorePathsToDelete>
-          </configuration>
-          <executions>
-            <execution>
-              <id>scm-publish</id>
-              <phase>site-deploy</phase>
-              <goals>
-                <goal>publish-scm</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <configuration>
-            <skipDeploy>true</skipDeploy>
-          </configuration>
-          <executions>
-            <execution>
-              <id>stage-for-scm-publish</id>
-              <phase>post-site</phase>
-              <goals>
-                <goal>stage</goal>
-              </goals>
-              <configuration>
-                <skipDeploy>false</skipDeploy>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
 
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-publish-plugin</artifactId>
+        <configuration>
+          <checkinComment>Apache Redback Main site deployment</checkinComment>
+          <ignorePathsToDelete>
+            <ignorePathToDelete>core**</ignorePathToDelete>
+            <ignorePathToDelete>components**</ignorePathToDelete>
+          </ignorePathsToDelete>
+        </configuration>
+        <executions>
+          <execution>
+            <id>scm-publish</id>
+            <phase>site-deploy</phase>
+            <goals>
+              <goal>publish-scm</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+        <executions>
+          <execution>
+            <id>stage-for-scm-publish</id>
+            <phase>post-site</phase>
+            <goals>
+              <goal>stage</goal>
+            </goals>
+            <configuration>
+              <skipDeploy>false</skipDeploy>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
   <reporting>
     <excludeDefaults>true</excludeDefaults>
