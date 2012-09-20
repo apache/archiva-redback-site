@@ -53,8 +53,8 @@
           <configuration>
             <checkinComment>Apache Redback Main site deployment</checkinComment>
             <ignorePathsToDelete>
-              <ignorePathToDelete>core/**</ignorePathToDelete>
-              <ignorePathToDelete>components/**</ignorePathToDelete>
+              <ignorePathToDelete>core**</ignorePathToDelete>
+              <ignorePathToDelete>components**</ignorePathToDelete>
             </ignorePathsToDelete>
           </configuration>
           <executions>
