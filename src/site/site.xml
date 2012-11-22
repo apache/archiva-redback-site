@@ -28,7 +28,7 @@
     <fluidoSkin>
       <topBarEnabled>true</topBarEnabled>
       <sideBarEnabled>false</sideBarEnabled>
-      <topBarContainerStyle>width: 90%;</topBarContainerStyle> 
+
       <googleSearch>
         <sitesearch>http://archiva.apache.org/redback</sitesearch>
       </googleSearch>
@@ -57,6 +57,10 @@
       <item name="User Management" href="user-management.html"/>
       <item name="Key Stores" href="key-store.html"/>
       <item name="Configuration" href="configuration.html"/>
+      <item name="Role Based Access Control" href="rbac/introduction.html">
+        <item name="Role Management" href="rbac/role-management.html"/>
+        <item name="Resource Links" href="rbac/resource-links.html"/>
+      </item>
     </menu>
     
     <menu name="Integration">
@@ -65,11 +69,7 @@
       <item name="Rest" href="integration/rest.html"/>
     </menu>
 
-    <menu name="Role Based Access Control">
-      <item name="Introduction" href="rbac/introduction.html"/>
-      <item name="Role Management" href="rbac/role-management.html"/>
-      <item name="Resource Links" href="rbac/resource-links.html"/>
-    </menu>
+
     
     <menu name="Development">
       <item name="Extending Redback Authentication" href="development/extending-authn.html"/>
