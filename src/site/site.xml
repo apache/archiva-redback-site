@@ -74,6 +74,7 @@
     <menu name="Development">
       <item name="Extending Redback Authentication" href="development/extending-authn.html"/>
       <item name="Redback Components" href="http://archiva.apache.org/redback/components"/>
+      <item name="Redback Core" href="http://archiva.apache.org/redback/core"/>
     </menu>
     
     <menu ref="reports" />
