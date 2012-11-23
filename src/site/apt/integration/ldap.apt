@@ -160,10 +160,14 @@ security.policy.password.expiration.enabled=false
 
   A cache named 'ldapUser' is used to reduce access to the LDAP server.
 
-  Pooled connection are enabled per default using the properties
+  Pooled connection are enabled per default using the properties {{{http://docs.oracle.com/javase/jndi/tutorial/ldap/connect/pool.html}ldap pooling}}:
 
   * com.sun.jndi.ldap.connect.pool = true
 
   * com.sun.jndi.ldap.connect.pool.timeout = 3600
+
+  []
+
+  For advanced options see {{{http://docs.oracle.com/javase/jndi/tutorial/ldap/connect/config.html}advanced configuration}}.
 
 
