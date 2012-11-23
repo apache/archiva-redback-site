@@ -33,11 +33,6 @@ Redback User Management
   Redback currently has support for the following stores for user information:
   
   * jpox support for multiple databases
+
+  * ldap (read only support)
   
-  []
-  
-  The following systems are being active worked on or planned for support:
-  
-  * ldap
-  
-  []

@@ -37,8 +37,6 @@ Redback Authentication
   []
 
   Support is being actively worked on or considered for:
- 
-  * ACEGI (effectively using their setup for authentication purposes)
 
   * LDAP
 
