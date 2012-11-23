@@ -1,7 +1,7 @@
  ----- 
  Ldap Integration 
  ----- 
- 29 May 2008
+ 2012-11-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -26,9 +26,8 @@
 
 Redback Ldap Integration
 
- <<NOTE>>: This has changed dramatically and may not be correct.
 
- With the alpha-3 release of redback limited support for ldap has been added as an authentication source.  Limited support for ldap means:
+ Redback has limited support for ldap has been added as an authentication source.  Limited support for ldap means:
  
  * Read-Only User Management
  
@@ -42,42 +41,33 @@ Redback Ldap Integration
   Configuration for ldap is actually a relatively simple procedure, a few components definitions need to be declared in an appropriate application.xml and then some configuration options must be set in the security.properties file.
 
 
-** The application.xml Additions
+** The applicationContext.xml Additions
 
- These components should be defined in the applicable application.xml
+ These components should be defined in the applicable spring configuration files
  
 *** ldap connection factory 
  
 +--------------------------------------+
 
-  <component>
-      <role>org.apache.archiva.redback.common.ldap.connection.LdapConnectionFactory</role>
-      <role-hint>configurable</role-hint>
-      <implementation>org.apache.archiva.redback.common.ldap.connection.ConfigurableLdapConnectionFactory</implementation>
-      <description></description>
-      <configuration>
-        <hostname></hostname>
-        <port></port>
-        <baseDn></baseDn>
-        <contextFactory>com.sun.jndi.ldap.LdapCtxFactory</contextFactory>
-        <password></password>
-        <bindDn></bindDn>
-      </configuration>
-    </component>
+  <bean name="ldapConnectionFactory" class="org.apache.archiva.redback.common.ldap.connection.ConfigurableLdapConnectionFactory">
+    <property name="userConf" ref="userConfiguration"/>
+  </bean>
     
 +--------------------------------------+
 
- * hostname - The hostname of the ldap server
+  In security.properties files
+
+ * ldap.config.hostname - The hostname of the ldap server
  
- * port - The port of the ldap server
+ * ldap.config.port - The port of the ldap server
  
- * baseDn - The baseDn of the ldap system
+ * ldap.config.base.dn - The baseDn of the ldap system
  
- * contextFactory - context factory for ldap connections
+ * ldap.config.context.factory - context factory for ldap connections (com.sun.jndi.ldap.LdapCtxFactory)
  
- * password - password for the bindDn for the root ldap connection
+ * ldap.config.password - password for the bindDn for the root ldap connection
  
- * bindDn - the core user used for authentication the ldap server, must be able to perform the necessary searches, etc.
+ * ldap.config.bind.dn - the core user used for authentication the ldap server, must be able to perform the necessary searches, etc.
 
 []
 
@@ -85,37 +75,34 @@ Redback Ldap Integration
 
 +--------------------------------------+
         
-    <component>
-      <role>org.apache.archiva.redback.common.ldap.UserMapper</role>
-      <role-hint>ldap</role-hint>
-      <implementation>org.apache.archiva.redback.common.ldap.LdapUserMapper </implementation>
-      <description></description>
-      <configuration>
-        <email-attribute>email</email-attribute>
-        <full-name-attribute>givenName</full-name-attribute>
-        <password-attribute>userPassword</password-attribute>
-        <user-id-attribute>cn</user-id-attribute>
-        <user-base-dn></user-base-dn>
-        <user-object-class>inetOrgPerson</user-object-class>
-        <user-filter>(|(attributeName=value1)(attributeName=value2))</user-filter>
-      </configuration>
-    </component>
+    <bean name="ldapUserMapper" class="org.apache.archiva.redback.common.ldap.LdapUserMapper">
+      <property name="emailAttribute" value="email"/>
+      <property name="fullNameAttribute" value="givenName"/>
+      <property name="passwordAttribute" value="userPassword"/>
+      <property name="userIdAttribute" value="cn"/>
+      <property name="userBaseDn" value="o=com"/>
+      <property name="userObjectClass" value="inetOrgPerson"/>
+      <property name="userConf" ref="userConfiguration"/>
+    </bean>
     
 +--------------------------------------+
-  
- * email-attribute - The name of the attribute on a user that contains the email address
- 
- * full-name-attribute - The name of the attribute on a user that contains the users fullName
- 
- * password-attribute - The name of the attribute containing the users password, used for the authentiction using the user manager and not the ldap bind authenticator
- 
- * user-id-attribute - The name of the attribute containing the users userId, most commonly cn or sn.
- 
- * user-base-dn - The base dn that will be subtree searched for users.
- 
- * user-object-class - the objectClass used in the ldap server for indentifying users, most commonly inetOrgPerson.
 
- * user-filter - the user filter is used to reduce the number of results during a LDAP request. It is optional.
+  In security.properties
+
+  
+ * ldap.config.mapper.attribute.email - The name of the attribute on a user that contains the email address
+ 
+ * ldap.config.mapper.attribute.fullname - The name of the attribute on a user that contains the users fullName
+ 
+ * ldap.config.mapper.attribute.password - The name of the attribute containing the users password, used for the authentiction using the user manager and not the ldap bind authenticator
+ 
+ * ldap.config.mapper.attribute.user.id - The name of the attribute containing the users userId, most commonly cn or sn.
+ 
+ * ldap.config.mapper.attribute.user.base.dn - The base dn that will be subtree searched for users.
+ 
+ * ldap.config.mapper.attribute.user.object.class - the objectClass used in the ldap server for indentifying users, most commonly inetOrgPerson.
+
+ * ldap.config.mapper.attribute.user.filter - the user filter is used to reduce the number of results during a LDAP request. It is optional.
   
 []  
   
@@ -123,40 +110,24 @@ Redback Ldap Integration
   
 +--------------------------------------+
   
-    <component>
-      <role>org.apache.archiva.redback.policy.UserSecurityPolicy</role>
-      <role-hint>default</role-hint>
-      <implementation>org.apache.archiva.redback.policy.DefaultUserSecurityPolicy</implementation>
-      <description>User Security Policy.</description>
-      <requirements>
-        <requirement>          <role>org.apache.archiva.redback.configuration.UserConfiguration</role>
-          <field-name>config</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.policy.PasswordEncoder</role>
-          <role-hint>sha1</role-hint>
-          <field-name>passwordEncoder</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.policy.UserValidationSettings</role>
-          <field-name>userValidationSettings</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.policy.CookieSettings</role>
-          <role-hint>rememberMe</role-hint>
-          <field-name>rememberMeCookieSettings</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.policy.CookieSettings</role>
-          <role-hint>signon</role-hint>
-          <field-name>signonCookieSettings</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.policy.PasswordRule</role>
-          <field-name>rules</field-name>
-        </requirement>
-      </requirements>
-    </component>
+    <bean name="userSecurityPolicy" class="org.apache.archiva.redback.policy.DefaultUserSecurityPolicy">
+      <property name="config" ref="userConfiguration"/>
+      <property name="passwordEncoder" ref="passwordEncoder#sha1"/>
+      <property name="userValidationSettings" ref="userValidationSettings"/>
+      <property name="rememberMeCookieSettings" ref="cookieSettings#rememberMe"/>
+      <property name="signonCookieSettings" ref="cookieSettings#signon"/>
+      <property name="rules">
+        add the rules you want to applied
+        <list>
+          <ref bean="passwordRule#alpha-count"/>
+          <ref bean="passwordRule#alpha-numeric"/>
+          <ref bean="passwordRule#character-length"/>
+          <ref bean="passwordRule#must-have"/>
+          <ref bean="passwordRule#no-whitespaces"/>
+          <ref bean="passwordRule#numerical-count"/>
+        </list>
+      </property>
+    </bean>
 
 +--------------------------------------+
 
@@ -187,26 +158,12 @@ security.policy.password.expiration.enabled=false
 
 * Caching
 
- If caching is desired the you should also include the following declarition and set the appropriate configuration from ldap to cached
+  A cache named 'ldapUser' is used to reduce access to the LDAP server.
 
-+--------------------------------------+
-    <component>
-      <role>org.apache.archiva.redback.users.UserManager</role>
-      <role-hint>cached</role-hint>
-      <implementation> org.apache.archiva.redback.users.cached.CachedUserManager</implementation>
-      <description>CachedUserManager</description>
-      <requirements>
-        <requirement>
-          <role> org.apache.archiva.redback.users.UserManager</role>
-          <role-hint>ldap</role-hint>
-          <field-name>userImpl</field-name>
-        </requirement>
-        <requirement>
-          <role>org.apache.archiva.redback.components.cache.Cache</role>
-          <role-hint>users</role-hint>
-          <field-name>usersCache</field-name>
-        </requirement>
-      </requirements>
-    </component>
+  Pooled connection are enabled per default using the properties
 
-+--------------------------------------+
+  * com.sun.jndi.ldap.connect.pool = true
+
+  * com.sun.jndi.ldap.connect.pool.timeout = 3600
+
+
