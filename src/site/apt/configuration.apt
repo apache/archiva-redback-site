@@ -38,7 +38,7 @@ use of properties files.  Below is a listing of all of the available configurati
 
 --------------------------------------------
 
-  <bean name="userConfiguration" class="org.apache.archiva.redback.configuration.UserConfiguration"
+  <bean name="userConfiguration" class="org.apache.archiva.redback.configuration.DefaultUserConfiguration"
       init-method="initialize">
     <property name="configs">
       <list>
