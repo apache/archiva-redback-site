@@ -32,7 +32,7 @@
   <properties>
     <redbackVersion>${project.version}</redbackVersion>
 
-    <scmPubCheckoutDirectory>${user.home}/redback-site-pub</scmPubCheckoutDirectory>
+    <scmPubCheckoutDirectory>${user.home}/archiva-sites/redback-site-pub</scmPubCheckoutDirectory>
 
   </properties>
 
