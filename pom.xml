@@ -33,6 +33,7 @@
     <redbackVersion>${project.version}</redbackVersion>
 
     <scmPubCheckoutDirectory>${user.home}/archiva-sites/redback-site-pub</scmPubCheckoutDirectory>
+    <svnUrl>https://svn.apache.org/repos/asf/archiva/site-content/redback</svnUrl>
 
   </properties>
 
@@ -40,7 +41,7 @@
    <site>
      <id>apache.website.svnpub</id>
       <name>Redback Website</name>
-     <url>scm:svn:https://svn.apache.org/repos/asf/archiva/site-content/redback</url>
+     <url>scm:svn:${svnUrl}</url>
    </site>
   </distributionManagement>
 
@@ -121,5 +122,52 @@
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/redback-site/trunk</developerConnection>
     <url>http://svn.apache.org/viewvc/archiva/redback/redback-site/trunk/</url>
   </scm>
+
+  <profiles>
+    <profile>
+      <id>setup-checkout</id>
+      <activation>
+        <file>
+          <missing>${scmPubCheckoutDirectory}</missing>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.7</version>
+            <executions>
+              <execution>
+                <id>prepare-checkout</id>
+                <phase>pre-site</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <exec executable="svn">
+                      <arg line="checkout --depth immediates ${svnUrl} ${scmPubCheckoutDirectory}" />
+                    </exec>
+
+                    <exec executable="svn">
+                      <arg line="update --set-depth exclude ${scmPubCheckoutDirectory}/core ${scmPubCheckoutDirectory}/components" />
+                    </exec>
+
+                    <pathconvert pathsep=" " property="dirs">
+                      <dirset dir="${scmPubCheckoutDirectory}" includes="*" />
+                    </pathconvert>
+                    <exec executable="svn">
+                      <arg line="update --set-depth infinity ${dirs}" />
+                    </exec>
+                  </tasks>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
