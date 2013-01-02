@@ -1,0 +1,1 @@
+ErrorDocument 404 http://archiva.apache.org/redback/errors/404.html
