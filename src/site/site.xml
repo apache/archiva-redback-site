@@ -59,7 +59,6 @@
       <item name="Configuration" href="configuration.html"/>
       <item name="Role Based Access Control" href="rbac/introduction.html">
         <item name="Role Management" href="rbac/role-management.html"/>
-        <item name="Resource Links" href="rbac/resource-links.html"/>
       </item>
       <item name="Ldap" href="integration/ldap.html"/>
       <item name="Rest" href="integration/rest.html"/>
