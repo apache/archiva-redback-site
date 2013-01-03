@@ -149,6 +149,10 @@ Redback Rest Support
 
 %{snippet|id=create-user|url=http://svn.apache.org/repos/asf/archiva/redback/redback-core/trunk/redback-integrations/redback-rest/redback-rest-services/src/test/java/org/apache/archiva/redback/rest/services/LoginServiceTest.java}
 
+%{snippet|id=get-user-service|url=http://svn.apache.org/repos/asf/archiva/redback/redback-core/trunk/redback-integrations/redback-rest/redback-rest-services/src/test/java/org/apache/archiva/redback/rest/services/AbstractRestServicesTest.java}
+
+
+
 
 
 
