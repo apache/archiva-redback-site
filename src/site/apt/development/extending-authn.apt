@@ -47,7 +47,7 @@ Extending Redback Authentication
 
   * utility and wrapper classes can be implemented under <<<redback-common>>>
 
-    * e.g. <<<$redback/redback-common/redback-common-ldap>>> contains the utility class <<<org.apache.archiva.redback.common.ldap.LdapUtils>>>, and the wrapper class <<<org.apache.archiva.redback.common.ldap.LdapUser>>>
+    * e.g. <<<$redback/redback-common/redback-common-ldap>>> contains the utility class <<<org.apache.archiva.redback.common.ldap.LdapUtils>>>, and the wrapper class <<<org.apache.archiva.redback.common.ldap.user.LdapUser>>>
 
     * other essential classes may be placed here as well, such as the <<<org.apache.archiva.redback.common.ldap.connection.LdapConnectionFactory>>>
 

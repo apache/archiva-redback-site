@@ -76,7 +76,7 @@ Redback Ldap Integration
 
 +--------------------------------------+
         
-    <bean name="ldapUserMapper" class="org.apache.archiva.redback.common.ldap.LdapUserMapper">
+    <bean name="ldapUserMapper" class="org.apache.archiva.redback.common.ldap.user.LdapUserMapper">
       <property name="emailAttribute" value="email"/>
       <property name="fullNameAttribute" value="givenName"/>
       <property name="passwordAttribute" value="userPassword"/>
