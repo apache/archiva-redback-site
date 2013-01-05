@@ -32,7 +32,7 @@
   <properties>
     <redbackVersion>${project.version}</redbackVersion>
 
-    <scmPubCheckoutDirectory>${user.home}/archiva-sites/redback-site-pub</scmPubCheckoutDirectory>
+    <scmPubCheckoutDirectory>site-content</scmPubCheckoutDirectory>
     <svnUrl>https://svn.apache.org/repos/asf/archiva/site-content/redback</svnUrl>
 
   </properties>
@@ -128,7 +128,7 @@
       <id>setup-checkout</id>
       <activation>
         <file>
-          <missing>${scmPubCheckoutDirectory}</missing>
+          <missing>site-content</missing>
         </file>
       </activation>
       <build>
