@@ -227,7 +227,7 @@ information.  This can be configured with the following options.
 
 ** User Manager Implementation to use
 
-  * user.manager.impl=cached
+  * user.manager.impl=cached (since 1.4-M4: Archiva support more than one value comma separated)
   
     * valid values for realistic usage are 'cached' and then further configuring the cached instance to use another underlying user manager like ldap or the jdo one which is used by default.  Placing 'ldap' here will check with the ldap system for a fair amount of checks and would likely be a performance issue
 
