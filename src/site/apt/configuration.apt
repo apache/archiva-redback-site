@@ -145,7 +145,7 @@ information.  This can be configured with the following options.
 
     * name for the admin user, by default this is 'admin' and can not easily be changed after the fact at this point.  However any number of people may be assigned full administrator roles.
 
-  * redback.default.guest=guest
+  * redback.default.guest=guest (currently guest is an hardcoded value so not possible to configure it)
 
     * name of the guest user
 
