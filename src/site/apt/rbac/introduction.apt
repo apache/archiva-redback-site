@@ -199,7 +199,7 @@ Advantages of RBAC
  achieved by statically and dynamically regulating users' actions
  through the establishment and definition of roles, role
  hierarchies, relationships, and constraints.  Thus, once an RBAC
- framework is established for an organization, the principal
+ framework is established for an organization, the username
  administrative actions are the granting and revoking of users
  into and out of roles.  This is in contrast to the more
  conventional and less intuitive process of attempting to
