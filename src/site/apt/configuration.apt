@@ -239,9 +239,5 @@ information.  This can be configured with the following options.
   
     * valid values for realistic usage are 'cached' and then further configuring the cached instance to use another underlying user manager like ldap or the jdo one which is used by default.  Placing 'ldap' here will check with the ldap system for a fair amount of checks and would likely be a performance issue
 
-** Authorizer Implementation(s) to use
-
-  * authorizer.impl=ldap,rbac (since 1.4-M4: Archiva more than one Authorizer implementation)
-
 
   
