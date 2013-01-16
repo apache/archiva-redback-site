@@ -233,6 +233,10 @@ information.  This can be configured with the following options.
 
   * ldap.config.groups.role.*(ldap group)=*(role) (mapping ldap group <-> redback role) (example: ldap.config.groups.role.archiva-admin=Archiva System Administrator)
 
+  * ldap.config.writable=true/false will write datas to ldap (default false)
+
+  * ldap.config.groups.use.rolename=true/false will create groups in ldap with default role if no group<->role mapping found (default false)
+
 ** User Manager Implementation(s) to use
 
   * user.manager.impl=cached (since 1.4-M4: Archiva support more than one value comma separated)
