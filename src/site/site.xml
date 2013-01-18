@@ -23,7 +23,7 @@
     <name>Redback</name>
     <href>http://archiva.apache.org/redback</href>
   </bannerLeft>
-
+  <googleAnalyticsAccountId>UA-140879-5</googleAnalyticsAccountId>
   <custom>
     <fluidoSkin>
       <topBarEnabled>true</topBarEnabled>
