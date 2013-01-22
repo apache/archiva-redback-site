@@ -237,6 +237,8 @@ information.  This can be configured with the following options.
 
   * ldap.config.groups.use.rolename=true/false will create groups in ldap with default role if no group<->role mapping found (default false)
 
+  * ldap.config.user.attribute= attribute name to use for user (default uid=)
+
 ** User Manager Implementation(s) to use
 
   * user.manager.impl=cached (since 1.4-M4: Archiva support more than one value comma separated)
