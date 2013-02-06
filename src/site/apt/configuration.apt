@@ -227,7 +227,7 @@ information.  This can be configured with the following options.
 
   * ldap.config.groups.class= object class for groups (default: groupOfUniqueNames)
 
-  * ldap.config.groups.base.dn= basedn for groups, dn with list of groups ( dc=archiva,dc=apache,dc=org )
+  * ldap.config.groups.base.dn= basedn for groups, dn with list of groups ( dc=archiva,dc=apache,dc=org ) (if empty default will be ldap.config.base.dn)
 
   * ldap.config.groups.role.*(ldap group)=*(roles) (mapping ldap group <-> redback roles comma separated) (example: ldap.config.groups.role.archiva-admin=Archiva System Administrator, Foo)
 
