@@ -233,7 +233,7 @@ information.  This can be configured with the following options.
 
   * ldap.config.writable=true/false will write datas to ldap (default false)
 
-  * ldap.config.groups.use.rolename=true/false will create groups in ldap with default role if no group<->role mapping found (default false)
+  * ldap.config.groups.use.rolename=true/false will create/use groups in ldap with default role if no group<->role mapping found (default false)
 
   * ldap.config.user.attribute= attribute name to use for user (default uid=)
 
