@@ -34,7 +34,7 @@ Redback Ldap Integration
  
  * xml and properties based configuration
  
- * tested against open ldap on linux and apacheds 1.5.0
+ * tested against open ldap on linux and {{{http://directory.apache.org}apacheds}} 1.5.0/2.0.0 and {{{http://opendj.forgerock.org}OpenDj}}
 
 
 * Setting up Ldap
