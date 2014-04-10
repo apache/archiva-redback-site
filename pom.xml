@@ -109,9 +109,9 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <anonymousConnection>scm:svn:http://svn.apache.org/repos/asf/archiva/redback/redback-core/trunk/</anonymousConnection>
-          <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/redback-core/trunk/</developerConnection>
-          <webAccessUrl>http://svn.apache.org/viewvc/archiva/redback/redback-core/trunk/</webAccessUrl>
+          <anonymousConnection>scm:git:https://git-wip-us.apache.org/repos/asf/archiva-redback-core.git</anonymousConnection>
+          <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/archiva-redback-core.git</developerConnection>
+          <webAccessUrl>http://github.org/apache/archiva-redback-core</webAccessUrl>
           <checkoutDirectoryName>redback-core</checkoutDirectoryName>
         </configuration>
       </plugin>
