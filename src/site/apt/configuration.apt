@@ -2,7 +2,7 @@
  Configuration     
  -----
  -----
- 19 January 2008
+ 23 May 2014
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -129,9 +129,9 @@ information.  This can be configured with the following options.
 
   * security.rememberme.enabled=true
 
-  * security.rememberme.timeout=525600
+  * security.rememberme.timeout=365
 
-    * Timeout in minutes ( 525600 minutes = 1 year )
+    * Timeout in days
 
   * security.signon.timeout=30
 
