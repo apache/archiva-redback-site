@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.apache.archiva</groupId>
     <artifactId>archiva-parent</artifactId>
-    <version>13-SNAPSHOT</version>
+    <version>16-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>redback-site</artifactId>
