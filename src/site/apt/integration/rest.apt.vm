@@ -43,18 +43,18 @@ Redback Rest Support
   CSRF prevention only the login cookie is checked for proper authorization and which is sent automatically from your
   browser after login. The redback REST services are not checking if the request is from the same origin as the login request.
 
-  For more information see https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+  For more information see {{{https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)}the OWASP info}} .
 
   Redback uses two mechanisms for checking cross site requests: Header validation and a validation token.
 
-  The behaviour of the filter can be configured, see {{{../configuration.html#REST_security_settings}REST configuration}}
+  The behaviour of the filter can be configured, see {{{../configuration.html#REST_security_settings}REST configuration}} .
 
 ** Header validation
 
   The header validation uses a base URL where the incoming requests are checked against. Per default the base URL is
   determined dynamically, but can be configured.
 
-  Each client request is checked for the HTTP headers 'Origin' and 'Referer' header.
+  Each client request is checked for the HTTP headers <<<Origin>>> and <<<Referer>>> header.
   If the Origin header is existent and the base URL does not match the header value the request will be denied.
   After that the Referer header is checked and matched against the base URL. If the header is existent and does
   not the base URL the request is denied.
@@ -62,9 +62,10 @@ Redback Rest Support
 
 ** Validation Token
 
-  If the header validation was successful, the request is checked for the X-XSRF-TOKEN header.
-  This header must contain a token that is returned from the login REST service together with the user information.
-  The token is encrypted by a key that is generated dynamically during startup of the redback service. That means
+  If the header validation was successful, the request is checked for the <<<X-XSRF-TOKEN>>> header.
+  This header must contain a token that is returned from the login REST service together with the user information
+  (<<<validationToken>>> element of the user element returned from the Login service).
+  The token is encrypted with a key that is generated dynamically during startup of the redback service. That means
   that after restart of the redback services all tokens generated before will be invalid.
   Validation tokens have a lifetime of 3 hours. After that you have to login again.
 
