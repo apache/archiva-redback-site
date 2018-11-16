@@ -1,0 +1,91 @@
+Archiva Redback Site Source Repository
+======================================
+:toc:
+
+This project contains the sources for the redback archiva site at https://archiva.apache.org/redback/
+
+You can build the web content and publish it to the content repository archiva-web-content.git.
+
+
+== How to build and publish the pages for the archiva web content
+
+
+The web content parts of this module are published to the path 
+
+  /redback/
+
+=== Use the script
+
+There is a shell script +deploySite.sh+ which you can run to generate the site check and publish to 
+the remote repository. It works only on Linux, on other platforms you have to go the next section.
+
+The script is interactive, it asks you to confirm the publish after generation of the staging part.
+
+.Execute
+
+  ./deploySite.sh 
+
+All arguments are appended to the mvn calls.
+
+=== Run the steps manually
+
+==== Checkout the site-content directory
+
+ git clone <PATH TO archiva-web-content.git> site-content --no-checkout
+ git -C site-content config core.sparsecheckout true
+ git -C site-content config user.name <YOUR NAME>
+ git -C site-content config user.email <YOUR MAILADDRESS>
+
+Copy the +git-sparse-checkout-pattern+ file to +site-content/.git/info/sparse-checkout+
+
+ git -C site-content checkout --
+
+==== Building the pages
+
+You need enough free disk space to publish the web content. The archiva web site repository is big, 
+but the maven build will only checkout the necessary directories for this build (sparse checkout).
+
+For all the commands you have to change to this repository directory:
+
+  cd redback-site
+
+.The following creates the site and copies the files to the staging folder
+
+  mvn clean site site:stage
+
+The result can be checked in 
+
+  redback-site/target/staging/
+
+with your browser.
+
+If you would like the use a local checkout of the archiva-web-content.git repository and not push directly
+to the remote repository, you may add this parameter:
+
+  -DsiteRepositoryUrl=scm:git:file:///${path-to-your-local-archiva}/archiva-web-content.git
+
+where +${path-to-your-local-archiva}+ is the path where a bare clone of the archiva-web-content.git is stored.
+
+==== Publish the pages
+
+.This command publishes to the git repository
+
+  mvn scm-publish:publish-scm
+
+After publishing to the git repository the gitpubsub mechanism is transferring it to the HTTP server.
+
+If you would like the use a local checkout of the archiva-web-content.git repository and not push directly
+to the remote repository, you may add this parameter:
+
+  -DsiteRepositoryUrl=scm:git:file:///${path-to-your-local-archiva}/archiva-web-content.git
+
+
+=== Some notes about the build process
+
+A sparse checkout of the git repository will be created in 
+
+ site-content
+
+but only, if the directory +site-content/.git+ does not exist. 
+
+
