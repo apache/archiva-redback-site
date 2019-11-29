@@ -31,6 +31,10 @@
   <properties>
     <redbackVersion>${project.version}</redbackVersion>
 
+    <redbackReleaseVersion>2.6</redbackReleaseVersion>
+    <redbackReleaseDate>2017-05-11</redbackReleaseDate>
+    <redbackCurrentDevVersion>3.0.0-SNAPSHOT</redbackCurrentDevVersion>
+
     <scmPubCheckoutDirectory>site-content</scmPubCheckoutDirectory>
     <scmPublishBranch>asf-staging</scmPublishBranch>
 

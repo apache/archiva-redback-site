@@ -62,6 +62,13 @@
       </item>
       <item name="Ldap" href="integration/ldap.html"/>
       <item name="Rest" href="integration/rest.html"/>
+
+      <item name="Module Documentation" href="">
+        <item name="Release ${redbackReleaseVersion}" href="core/"/>
+        <item name="Dev ${redbackCurrentDevVersion}" href="core/${redbackCurrentDevVersion}/"/>
+      </item>
+
+
     </menu>
 
     <menu name="Development">
