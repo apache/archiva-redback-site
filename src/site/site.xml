@@ -66,7 +66,6 @@
 
     <menu name="Development">
       <item name="Extending Redback Authentication" href="development/extending-authn.html"/>
-      <item name="Redback Components" href="http://archiva.apache.org/redback/components"/>
       <item name="Redback Core" href="http://archiva.apache.org/redback/core"/>
     </menu>
     
@@ -78,6 +77,13 @@
       <item name="Sponsoring Apache" href="http://www.apache.org/foundation/sponsorship.html"/>
       <item name="Thanks" href="http://www.apache.org/foundation/thanks.html"/>
     </menu>
+
+    <breadcrumbs>
+      <item name="Apache" href="https://www.apache.org" />
+      <item name="Archiva" href="../" />
+      <item name="Redback" href="/" />
+    </breadcrumbs>
+
 
     <footer>
       <![CDATA[

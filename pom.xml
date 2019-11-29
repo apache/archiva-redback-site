@@ -32,6 +32,7 @@
     <redbackVersion>${project.version}</redbackVersion>
 
     <scmPubCheckoutDirectory>site-content</scmPubCheckoutDirectory>
+    <scmPublishBranch>asf-staging</scmPublishBranch>
 
     <siteRepositoryUrl>scm:git:https://gitbox.apache.org/repos/asf/archiva-web-content.git</siteRepositoryUrl>
     <site.staging.base>${project.basedir}</site.staging.base>
@@ -62,6 +63,10 @@
           <skipDeletedFiles>true</skipDeletedFiles>
           <content>${project.build.directory}/staging</content>
           <tryUpdate>true</tryUpdate>
+          <ignorePathsToDelete>
+            <ignorePathToDelete>redback/components**</ignorePathToDelete>
+          </ignorePathsToDelete>
+          <scmBranch>${scmPublishBranch}</scmBranch>
         </configuration>
         <executions>
           <execution>
@@ -157,6 +162,8 @@
                   <arguments>
                     <argument>-d</argument>
                     <argument>${scmPubCheckoutDirectory}</argument>
+                    <argument>-b</argument>
+                    <argument>${scmPublishBranch}</argument>
                     <argument>${siteRepositoryUrl}</argument>
                   </arguments>
                 </configuration>
