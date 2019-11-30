@@ -35,8 +35,9 @@
     <redbackReleaseDate>2017-05-11</redbackReleaseDate>
     <redbackCurrentDevVersion>3.0.0-SNAPSHOT</redbackCurrentDevVersion>
 
-    <scmPubCheckoutDirectory>site-content</scmPubCheckoutDirectory>
+    <scmPubCheckoutDirectory>.site-content</scmPubCheckoutDirectory>
     <scmPublishBranch>asf-staging</scmPublishBranch>
+    <scmPublishPath>/redback</scmPublishPath>
 
     <siteRepositoryUrl>scm:git:https://gitbox.apache.org/repos/asf/archiva-web-content.git</siteRepositoryUrl>
     <site.staging.base>${project.basedir}</site.staging.base>
@@ -87,7 +88,7 @@
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
           <skipDeploy>true</skipDeploy>
-          <stagingDirectory>${site.staging.base}/target/staging/redback/</stagingDirectory>
+          <stagingDirectory>${site.staging.base}/target/staging${scmPublishPath}/</stagingDirectory>
         </configuration>
         <executions>
           <execution>
